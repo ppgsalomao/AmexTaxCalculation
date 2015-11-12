@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tax Calculator</string>
+    <string name="action_reload">Reload</string>
+    <string name="empty_receipt">No items on Receipt</string>
+    <string name="receipt_item_format">%1$d %2$s: %3$.2f\n</string>
+    <string name="receipt_taxes_format">Sales Taxes: %1$.2f\n</string>
+    <string name="receipt_total_format">Total: %1$.2f</string>
+    <string name="dialog_add_button_text">Add</string>
+    <string name="dialog_title">Basket Item</string>
+</resources>
