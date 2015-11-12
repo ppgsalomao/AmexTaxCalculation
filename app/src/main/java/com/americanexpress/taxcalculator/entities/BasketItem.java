@@ -30,7 +30,7 @@ public class BasketItem implements Parcelable {
             taxMultiplier += 0.05;
 
         double taxValue = product.getUnitPrice() * this.quantity * taxMultiplier;
-        return Math.round(taxValue * 20.0) / 20.0;
+        return Math.ceil(taxValue * 20.0) / 20.0;
     }
 
     public double getTotalValue() {

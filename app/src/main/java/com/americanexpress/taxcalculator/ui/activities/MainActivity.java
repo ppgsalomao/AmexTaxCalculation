@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.fab)
     public void onFloatingActionButtonClick() {
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(this, R.style.AppTheme_Dialog);
+        View view = LayoutInflater.from(contextThemeWrapper).inflate(R.layout.view_dialog_input, null);
+        final EditText basketItemEditText = ButterKnife.findById(view, R.id.dialog_input_edit_text);
 
         new AlertDialog.Builder(this)
                 .setTitle(R.string.dialog_title)
@@ -72,9 +75,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 try {
-                                    /*EditText basketItemEditText = ButterKnife.findById(dialog, R.id.dialog_input_edit_text);
                                     EventBus.getInstance().post(new AddItemEvent(
-                                            basketItemEditText.getText().toString()));*/
+                                            basketItemEditText.getText().toString()));
                                 } catch(Exception e) {
                                     Snackbar.make(MainActivity.this.floatingActionButton,
                                                     "Invalid input.",
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         })
-                .setView(R.layout.view_dialog_input)
+                .setView(view)
                 .show();
     }
 }

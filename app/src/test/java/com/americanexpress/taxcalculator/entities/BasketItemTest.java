@@ -27,7 +27,7 @@ public class BasketItemTest {
     }
 
     private double roundToTheNearestFiveCents(double value) {
-        return Math.round(value * 20.0) / 20.0;
+        return Math.ceil(value * 20.0) / 20.0;
     }
 
     @Test
@@ -91,9 +91,9 @@ public class BasketItemTest {
 
     @Test
     public void testImportedFoodBasketItem() {
-        double price = 59.13;
-        int quantity = 5;
-        Product product = new Product("Product", price, ProductType.FOOD, true);
+        double price = 11.25;
+        int quantity = 1;
+        Product product = new Product("box of imported chocolates", price, ProductType.FOOD, true);
         BasketItem basketItem = new BasketItem(product, quantity);
 
         double taxValue = roundToTheNearestFiveCents(price * quantity * 0.05);
